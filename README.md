@@ -1,4 +1,4 @@
-### Hi there 👋
+### LeetCode Progress 👋
 
 <!--
 **nghialthanh/nghialthanh** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
@@ -14,4 +14,4 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
-![Stats](https://leetcode.card.workers.dev/user5981XG?theme=default&font=baloo&extension=null)
+![Stats](https://leetcode.card.workers.dev/dungtruong?theme=default&font=baloo&extension=null)
