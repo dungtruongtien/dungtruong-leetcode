@@ -23,15 +23,24 @@ var binarySearch = function(arr, target, start, end) {
 }
 
 var searchMatrix = function (matrix, target) {
-  for (let i = 0; i < matrix.length; i++) {
-    if (target === matrix[i][0] || target === matrix[i][matrix[i].length - 1]) {
-      return true;
+  let start = 0;
+  let end = matrix.length - 1;
+  while(true) {
+    const pivot = Math.floor((start + end) / 2);
+    const pivotRow = matrix[pivot];
+    if(target >= pivotRow[0] && target <= pivotRow[pivotRow.length - 1]) {
+      if(target === pivotRow[0] || target === pivotRow[pivotRow.length - 1]) {
+        return true;
+      }
+      return binarySearch(pivotRow, target, 1, pivotRow.length - 1);
     }
-    if (target > matrix[i][0] && target < matrix[i][matrix[i].length - 1]) {
-      return binarySearch(matrix[i], target, 1, matrix[i].length - 2);
+    if(target > pivotRow[pivotRow.length - 1]) {
+      start = pivot + 1;
+    } else if(target < pivotRow[0]) {
+      end = pivot - 1;
+    }
+    if (start > end) {
+      return false;
     }
   }
-  return false;
 };
-
-console.log(searchMatrix([[1, 3, 5, 7], [10, 11, 16, 20], [23, 30, 34, 60]], 3));
